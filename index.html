@@ -15,11 +15,14 @@
 <body>
   <main id="container">
     <section id="intro">
-      <video preload="auto" loop class="background-video">
+      <!--video preload="auto" loop class="background-video">
         <source src="http://edj-code.fr/cross-bitume/videotitre.webm" type="video/webm">
         <source src="http://edj-code.fr/cross-bitume/videotitre.mp4" type="video/mp4">
         Votre navigateur ne permet pas de lire les vidéos HTML5.
-      </video>
+      </video-->
+
+      <div id="intro-player" data-video-id="S4wS2hxTn5E"></div>
+
       <div class="content">
         <article>
           <h1>Tournan-en-Y</h1>
@@ -41,11 +44,7 @@
     </section>
 
     <section id="chapitre-2" style="background-color: lightgreen;">
-      <video preload="auto" loop class="background-video">
-        <source src="http://edj-code.fr/cross-bitume/lyndonV2webm.webm" type="video/webm">
-        <source src="http://edj-code.fr/cross-bitume/lyndonV2compressed.mp4" type="video/mp4">
-        Votre navigateur ne permet pas de lire les vidéos HTML5.
-      </video>
+      <div id="chapitre-2-player" data-video-id="S4wS2hxTn5E"></div>
     </section>
 
  <section id="chapitre-2a">
@@ -118,6 +117,7 @@
     </section>
   </main>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
