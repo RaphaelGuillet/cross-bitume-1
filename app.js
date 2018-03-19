@@ -47,6 +47,7 @@ function startVideo(chapitre) {
 
 
 function stopVideo(chapitre) {
+  alert('stop ' + chapitre)
   if (players[chapitre] && players[chapitre].stopVideo) {    
     players[chapitre].stopVideo()
   }
