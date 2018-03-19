@@ -81,16 +81,19 @@ function initPlayer(id) {
 
 function scrollScene() {
   const progress = mainScene.progress()
+
   if (progress < (1/11)) {
     startVideo('intro')
   } else {
     stopVideo('intro')
   }
+
   if (progress > (2/11) && progress < (4/11)) {
     startVideo('chapitre-2')
   } else {
     stopVideo('chapitre-2')
   }
+
   if (progress > (5.5/11) && progress < (7/11)) {
     startVideo('chapitre-2c')
   } else {
@@ -99,7 +102,6 @@ function scrollScene() {
 }
 
 function resizeVideo(id) {
-console.log(id)  
   var video = $('#' + id);
 
   if(window.innerWidth > window.innerHeight) {    
