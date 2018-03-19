@@ -54,6 +54,9 @@ function stopVideo(chapitre) {
 
 function initPlayer(id) {
   var element = $("#" + id)
+
+  $(window).on('resize', function() { resizeVideo(id) })
+
   return new YT.Player(id, {
     height: '100%',
     width: '100%',
@@ -95,7 +98,8 @@ function scrollScene() {
   }
 }
 
-function resizeVideo(id) {  
+function resizeVideo(id) {
+console.log(id)  
   var video = $('#' + id);
 
   if(window.innerWidth > window.innerHeight) {    
