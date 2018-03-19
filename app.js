@@ -62,7 +62,7 @@ function initPlayer(id) {
     width: '100%',
     videoId: element.data('video-id'),
     playerVars: {
-      autoplay: 0, 
+      autoplay: 1, 
       controls: 0,
       loop: 1,
       playlist: element.data('video-id'),
