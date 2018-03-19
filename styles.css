@@ -53,7 +53,10 @@ p {
   padding: 0 5vw;
   max-height: 100vh;
   max-width: 100vh;
+}
 
+iframe {
+  pointer-events: none;
 }
 
 main#container {

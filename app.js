@@ -1,4 +1,4 @@
-var players;
+var players = {};
 var mainScene;
 
 function onYouTubeIframeAPIReady() {
@@ -31,10 +31,13 @@ function onYouTubeIframeAPIReady() {
     .addIndicators()
     .addTo(controller);
 
-  players = {
-    'intro': initPlayer('intro-player'),
-    'chapitre-2': initPlayer('chapitre-2-player'),
-  }
+  // Ne pas toucher ! Ce petit bout de javascript génère les iframe youtube pour vous
+  // Pour ajouter une video youtube: <div id="XXXX" data-video-id="YYY"></div>
+  $('[data-video-id]').each(function () {
+    var $el = $(this)
+    var chapitre = $el.parents('section').attr('id')
+    players[chapitre] = initPlayer($el.attr('id'))
+  })
 }
 
 function startVideo(chapitre) {
@@ -47,9 +50,8 @@ function startVideo(chapitre) {
 
 
 function stopVideo(chapitre) {
-  alert('stop ' + chapitre)
   if (players[chapitre] && players[chapitre].stopVideo) {    
-    players[chapitre].stopVideo()
+    players[chapitre].pauseVideo()
   }
 }
 
