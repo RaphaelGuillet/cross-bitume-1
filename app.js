@@ -101,6 +101,12 @@ function scrollScene() {
   } else {
     stopVideo('chapitre-2c')
   }
+
+    if (progress > (7.5/11) && progress < (9/11)) {
+    startVideo('chapitre-3')
+  } else {
+    stopVideo('chapitre-3')
+  }
 }
 
 function resizeVideo(id) {
