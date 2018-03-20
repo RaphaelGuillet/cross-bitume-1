@@ -70,8 +70,7 @@ function initPlayer(id) {
       loop: 1,
       playlist: element.data('video-id'),
       showinfo: 0,
-      modestbranding: 1,
-      start: 70
+      modestbranding: 1
     },
     events: {
       'onReady': function() {
