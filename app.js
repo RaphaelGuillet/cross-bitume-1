@@ -13,6 +13,7 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-2b', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2bb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2c', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
+    .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-3', 1, { x: '100%' }, { x: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-4', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
