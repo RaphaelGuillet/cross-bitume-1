@@ -15,11 +15,15 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-2c', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
-    .fromTo('section#chapitre-3', 1, { x: '100%' }, { x: '0%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-4', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-2dd', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
+    .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-5b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
-
+    .fromTo('section#chapitre-police', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-policeb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-fresnes', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-fresnesb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
 
   // create a scene
   mainScene = new ScrollMagic.Scene({
@@ -86,31 +90,31 @@ function initPlayer(id) {
 function scrollScene() {
   const progress = mainScene.progress()
 
-  if (progress < (1/13)) {
+  if (progress < (1/18)) {
     startVideo('intro')
   } else {
     stopVideo('intro')
   }
 
-  if (progress > (2/13) && progress < (4/13)) {
+  if (progress > (2/18) && progress < (4/18)) {
     startVideo('chapitre-2')
   } else {
     stopVideo('chapitre-2')
   }
 
-  if (progress > (5.5/13) && progress < (8.5/13)) {
+  if (progress > (5.5/18) && progress < (8.5/18)) {
     startVideo('chapitre-2c')
   } else {
     stopVideo('chapitre-2c')
   }
 
-    if (progress > (9.5/13) && progress < (10.5/13)) {
+    if (progress > (9.5/18) && progress < (10.5/18)) {
     startVideo('chapitre-3')
   } else {
     stopVideo('chapitre-3')
   }
 
-  if (progress > (11/13) && progress < (12.5/13)) {
+  if (progress > (11.5/18) && progress < (14/18)) {
     startVideo('chapitre-5')
   } else {
     stopVideo('chapitre-5')
