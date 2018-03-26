@@ -41,7 +41,11 @@ function onYouTubeIframeAPIReady() {
 
 function startVideo(chapitre) {
   var id = $(document.getElementById(chapitre)).find('[data-video-id]').attr('id')
-  players[chapitre] = players[chapitre] || initPlayer(id)
+  if (players[chapitre]) {
+    players[chapitre].playVideo()
+  } else {
+    players[chapitre] = initPlayer(id)
+  }
 }
 
 
@@ -82,7 +86,7 @@ function initPlayer(id) {
 function scrollScene() {
   const progress = mainScene.progress()
 
-  if (progress < (1/18)) {
+  if (progress < (1/18) && progress < (2/18)) {
     startVideo('intro')
   } else {
     stopVideo('intro')

@@ -137,10 +137,10 @@ section#intro .content {
   height: 100vh;
 }
 
-blockquote {
+span {
   height:300px;
-  margin-bottom:10px;
-  transition:all ease-out 2s 0s;
+  margin-bottom:100px;
+  transition:all ease-out 3s 2s;
 }
     .fade-ani{
   opacity:0;
@@ -149,7 +149,7 @@ blockquote {
     .fade-down{top:300px;}
 
     .fade-ani.showing{}
-    .fade-in.showing{opacity:1;}
+    .fade-in.showing{opacity:0;}
     .fade-up.showing{bottom:0px;opacity:1;}
     .fade-down.showing{top:-0px;opacity:1;}
 
