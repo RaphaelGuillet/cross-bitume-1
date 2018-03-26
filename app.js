@@ -29,6 +29,8 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-fresnesb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-barodebb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-credit', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-creditb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
 
   // create a scene
   mainScene = new ScrollMagic.Scene({
@@ -102,7 +104,7 @@ function scrollScene() {
     stopVideo('chapitre-2')
   }
 
-  if (progress > (5.5/18) && progress < (8.5/18)) {
+  if (progress > (4.5/18) && progress < (8.5/18)) {
     startVideo('chapitre-2c')
   } else {
     stopVideo('chapitre-2c')
@@ -114,13 +116,13 @@ function scrollScene() {
     stopVideo('chapitre-3')
   } */
 
-  if (progress > (11.5/18) && progress < (14/18)) {
+  if (progress > (10.5/18) && progress < (14/18)) {
     startVideo('chapitre-5')
   } else {
     stopVideo('chapitre-5')
   }
 
-  if (progress > (17/18) && progress < (18.5/18)) {
+  if (progress > (15/18) && progress < (18.5/18)) {
     startVideo('chapitre-barode')
   } else {
     stopVideo('chapitre-barode')
