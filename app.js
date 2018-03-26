@@ -1,7 +1,7 @@
 var players = {};
 var mainScene;
 
-$(function () {
+function onYouTubeIframeAPIReady() {
   // init controller
   var controller = new ScrollMagic.Controller();
 
@@ -44,33 +44,43 @@ $(function () {
     var chapitre = $el.parents('section').attr('id')
     //players[chapitre] = initPlayer($el.attr('id'))
   })
-});
+}
 
 function startVideo(chapitre) {
   // $('#'+chapitre+' video').addClass('active')
   // $('#'+chapitre+' video')[0].play()
-  var id = $(document.getElementById(chapitre)).find('[data-vimeo-id]').attr('id')
+  var id = $(document.getElementById(chapitre)).find('[data-video-id]').attr('id')
   players[chapitre] = players[chapitre] || initPlayer(id)
-  players[chapitre].play()  
 }
 
 
 function stopVideo(chapitre) {
-  if (players[chapitre] && players[chapitre].pause) {    
-    players[chapitre].pause()
+  if (players[chapitre] && players[chapitre].pauseVideo) {    
+    players[chapitre].pauseVideo()
   }
 }
 
 function initPlayer(id) {
   var element = $("#" + id)
 
-  return new Vimeo.Player(document.getElementById(id), {
-    height: window.innerHeight,
-    width: window.innerWidth,
-    autoplay: true,
-    background: true,
-    autopause: false,
-    loop: true
+  return new YT.Player(id, {
+    height: '100%',
+    width: '100%',
+    videoId: element.data('video-id'),
+    playerVars: {
+      autoplay: 1, 
+      controls: 0,
+      loop: 1,
+      playlist: element.data('video-id'),
+      showinfo: 0,
+      modestbranding: 1
+    },
+    events: {
+      'onReady': function() {
+        scrollScene()
+        resizeVideo(id)
+      }
+    }
   });
 }
 
@@ -111,20 +121,18 @@ function scrollScene() {
 function resizeVideo(id) {
   var video = $('#' + id);
 
-  if(window.innerWidth > window.innerHeight) {    
-    var newWidth = video.outerHeight() * (16  / 9);
-    var scale = window.innerWidth / newWidth
-    video.css('width', newWidth + "px")
-    video.css('transform-origin', 'left center')
-  } else { 
-    var newHeight = video.outerWidth() * (9 / 16);
-    var scale = window.innerHeight / newHeight
-    video.css('height', newHeight + "px")
-    video.css('transform-origin', 'center top')
+
+  var $videoBgAspect = $(".videobg-aspect");
+  var $videoBgWidth = $(".videobg-width");
+  var videoAspect = $videoBgAspect.outerHeight() / $videoBgAspect.outerWidth();
+
+  windowAspect = ($(window).height() / $(window).width());
+
+  if (windowAspect > videoAspect) {
+    $videoBgWidth.width((windowAspect / videoAspect) * 100 + '%');
+  } else {
+    $videoBgWidth.width(100 + "%")
   }
-  
-  //Define the new width and centrally align the iframe
-  video.css("transform", "scale(" + scale + ")");
 }
 
 
