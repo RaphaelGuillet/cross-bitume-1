@@ -66,7 +66,11 @@ function initPlayer(id) {
       modestbranding: 1
     },
     events: {
-      'onReady': function() {
+      'onReady': function(event) {
+        if (isMobile()) {
+          event.target.mute()
+        }
+        event.target.playVideo();
         scrollScene()
         resizeVideo(id)
       }
@@ -125,6 +129,11 @@ function resizeVideo(id) {
   
   //Define the new width and centrally align the iframe
   video.css("transform", "scale(" + scale + ")");
+}
+
+function isMobile()  {
+  var ua = navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)
 }
 
 
