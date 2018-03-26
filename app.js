@@ -2,6 +2,7 @@ var players = {};
 var mainScene;
 
 function onYouTubeIframeAPIReady() {
+  $('#container').css('height', window.innerHeight)
   // init controller
   var controller = new ScrollMagic.Controller();
 
