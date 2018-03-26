@@ -17,6 +17,8 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-2dd', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
+    .fromTo('section#chapitre-21', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From right
+    .fromTo('section#chapitre-2aa', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
@@ -25,6 +27,8 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-policeb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-fresnes', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-fresnesb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-barodebb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
 
   // create a scene
   mainScene = new ScrollMagic.Scene({
@@ -114,6 +118,12 @@ function scrollScene() {
     startVideo('chapitre-5')
   } else {
     stopVideo('chapitre-5')
+  }
+
+  if (progress > (17/18) && progress < (18.5/18)) {
+    startVideo('chapitre-barode')
+  } else {
+    stopVideo('chapitre-barode')
   }
 }
 
