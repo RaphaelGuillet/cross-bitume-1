@@ -36,19 +36,9 @@ function onYouTubeIframeAPIReady() {
     .on("update", scrollScene)
     .addIndicators()
     .addTo(controller); 
-
-  // Ne pas toucher ! Ce petit bout de javascript génère les iframe youtube pour vous
-  // Pour ajouter une video youtube: <div id="XXXX" data-video-id="YYY"></div>
-  $('[data-vimeo-id]').each(function () {
-    var $el = $(this)
-    var chapitre = $el.parents('section').attr('id')
-    //players[chapitre] = initPlayer($el.attr('id'))
-  })
 }
 
 function startVideo(chapitre) {
-  // $('#'+chapitre+' video').addClass('active')
-  // $('#'+chapitre+' video')[0].play()
   var id = $(document.getElementById(chapitre)).find('[data-video-id]').attr('id')
   players[chapitre] = players[chapitre] || initPlayer(id)
 }
@@ -121,18 +111,20 @@ function scrollScene() {
 function resizeVideo(id) {
   var video = $('#' + id);
 
-
-  var $videoBgAspect = $(".videobg-aspect");
-  var $videoBgWidth = $(".videobg-width");
-  var videoAspect = $videoBgAspect.outerHeight() / $videoBgAspect.outerWidth();
-
-  windowAspect = ($(window).height() / $(window).width());
-
-  if (windowAspect > videoAspect) {
-    $videoBgWidth.width((windowAspect / videoAspect) * 100 + '%');
-  } else {
-    $videoBgWidth.width(100 + "%")
+  if(window.innerWidth > window.innerHeight) {    
+    var newWidth = video.outerHeight() * (16  / 9);
+    var scale = window.innerWidth / newWidth
+    video.css('width', newWidth + "px")
+    video.css('transform-origin', 'left center')
+  } else { 
+    var newHeight = video.outerWidth() * (9 / 16);
+    var scale = window.innerHeight / newHeight
+    video.css('height', newHeight + "px")
+    video.css('transform-origin', 'center top')
   }
+  
+  //Define the new width and centrally align the iframe
+  video.css("transform", "scale(" + scale + ")");
 }
 
 
