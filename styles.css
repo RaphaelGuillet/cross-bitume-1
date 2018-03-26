@@ -58,6 +58,7 @@ p {
 
 iframe {
   pointer-events: none;
+  background:black;
 }
 
 main#container {

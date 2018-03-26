@@ -49,22 +49,20 @@ $(function () {
 function startVideo(chapitre) {
   // $('#'+chapitre+' video').addClass('active')
   // $('#'+chapitre+' video')[0].play()
-  if (players[chapitre] && players[chapitre].playVideo) {    
-    players[chapitre].pause()
-  }
+  var id = $(document.getElementById(chapitre)).find('[data-vimeo-id]').attr('id')
+  players[chapitre] = players[chapitre] || initPlayer(id)
+  players[chapitre].play()  
 }
 
 
 function stopVideo(chapitre) {
-  if (players[chapitre] && players[chapitre].stopVideo) {    
-    players[chapitre].pauseVideo()
+  if (players[chapitre] && players[chapitre].pause) {    
+    players[chapitre].pause()
   }
 }
 
 function initPlayer(id) {
   var element = $("#" + id)
-
-  $(window).on('resize', function() { resizeVideo(id) })
 
   return new Vimeo.Player(document.getElementById(id), {
     height: window.innerHeight,
@@ -97,11 +95,11 @@ function scrollScene() {
     stopVideo('chapitre-2c')
   }
 
-    if (progress > (9.5/18) && progress < (10.5/18)) {
+  /* if (progress > (9.5/18) && progress < (10.5/18)) {
     startVideo('chapitre-3')
   } else {
     stopVideo('chapitre-3')
-  }
+  } */
 
   if (progress > (11.5/18) && progress < (14/18)) {
     startVideo('chapitre-5')
@@ -112,8 +110,6 @@ function scrollScene() {
 
 function resizeVideo(id) {
   var video = $('#' + id);
-
-  console
 
   if(window.innerWidth > window.innerHeight) {    
     var newWidth = video.outerHeight() * (16  / 9);
