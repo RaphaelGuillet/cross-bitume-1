@@ -4,7 +4,7 @@ var mainScene;
 $(function () {
   // init controller
   var controller = new ScrollMagic.Controller();
-  /*
+
   var wipeAnimation = new TimelineMax()
     .fromTo('section#chapitre-1a', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone }) // From bottom
     .fromTo('section#chapitre-1b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From bottom
@@ -29,20 +29,20 @@ $(function () {
   mainScene = new ScrollMagic.Scene({
       triggerElement: '#container',
       triggerHook: 'onLeave',
-      duration: ($('section').length - 1) * 100 + '%' // = nombre de slides * 100 (pour un scroll naturel)
+      duration: ($('section').length - 1) * 150 + '%'  // = nombre de slides * 100 (pour un scroll naturel)
     })
     .setPin('#container')
     .setTween(wipeAnimation)
     .on("update", scrollScene)
     .addIndicators()
-    .addTo(controller); */
+    .addTo(controller); 
 
   // Ne pas toucher ! Ce petit bout de javascript génère les iframe youtube pour vous
   // Pour ajouter une video youtube: <div id="XXXX" data-video-id="YYY"></div>
   $('[data-vimeo-id]').each(function () {
     var $el = $(this)
     var chapitre = $el.parents('section').attr('id')
-    players[chapitre] = initPlayer($el.attr('id'))
+    //players[chapitre] = initPlayer($el.attr('id'))
   })
 });
 
