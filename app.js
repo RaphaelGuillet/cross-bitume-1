@@ -1,7 +1,7 @@
 var players = {};
 var mainScene;
 
-function onYouTubeIframeAPIReady() {
+$(function () {
   // init controller
   var controller = new ScrollMagic.Controller();
 
@@ -29,7 +29,7 @@ function onYouTubeIframeAPIReady() {
   mainScene = new ScrollMagic.Scene({
       triggerElement: '#container',
       triggerHook: 'onLeave',
-      duration: '800%' // = nombre de slides * 100 (pour un scroll naturel)
+      duration: '12000%' // = nombre de slides * 100 (pour un scroll naturel)
     })
     .setPin('#container')
     .setTween(wipeAnimation)
@@ -39,18 +39,18 @@ function onYouTubeIframeAPIReady() {
 
   // Ne pas toucher ! Ce petit bout de javascript génère les iframe youtube pour vous
   // Pour ajouter une video youtube: <div id="XXXX" data-video-id="YYY"></div>
-  $('[data-video-id]').each(function () {
+  $('[data-vimeo-id]').each(function () {
     var $el = $(this)
     var chapitre = $el.parents('section').attr('id')
     players[chapitre] = initPlayer($el.attr('id'))
   })
-}
+});
 
 function startVideo(chapitre) {
   // $('#'+chapitre+' video').addClass('active')
   // $('#'+chapitre+' video')[0].play()
   if (players[chapitre] && players[chapitre].playVideo) {    
-    players[chapitre].playVideo()
+    players[chapitre].pause()
   }
 }
 
@@ -66,24 +66,13 @@ function initPlayer(id) {
 
   $(window).on('resize', function() { resizeVideo(id) })
 
-  return new YT.Player(id, {
-    height: '100%',
-    width: '100%',
-    videoId: element.data('video-id'),
-    playerVars: {
-      autoplay: 1, 
-      controls: 0,
-      loop: 1,
-      playlist: element.data('video-id'),
-      showinfo: 0,
-      modestbranding: 1
-    },
-    events: {
-      'onReady': function() {
-        scrollScene()
-        resizeVideo(id)
-      }
-    }
+  return new Vimeo.Player(document.getElementById(id), {
+    height: window.innerHeight,
+    width: window.innerWidth,
+    autoplay: true,
+    background: true,
+    autopause: false,
+    loop: true
   });
 }
 
@@ -140,7 +129,7 @@ function resizeVideo(id) {
   video.css("transform", "scale(" + scale + ")");
 }
 
-/*
+
 $(window).scroll(function() {
   var bottom_of_window =
   $(window).scrollTop() + $(window).height();
@@ -156,4 +145,4 @@ $(window).scroll(function() {
     });
 
   });
-*/
+
