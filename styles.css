@@ -55,6 +55,10 @@ p {
   max-width: 100vh;
 }
 
+main article p span.format-quote {
+  font-style: italic;
+}
+
 .panel {
   background-color: rgba(5, 5, 5, 0.5) !important;
 }
