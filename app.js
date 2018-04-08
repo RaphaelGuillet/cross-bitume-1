@@ -21,14 +21,15 @@ function onYouTubeIframeAPIReady() {
     .fromTo('section#chapitre-2aa', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone }) // From right
     .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-3bis', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-5b', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-police', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-policeb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-fresnes', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-fresnesb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-max', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-maxb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-story', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-storyb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
-    .fromTo('section#chapitre-barodebb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
+    .fromTo('section#chapitre-barodeb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-credit', 1, { y: '100%' }, { y: '0%', ease: Linear.easeNone })// From right
     .fromTo('section#chapitre-creditb', 1, { y: '100%' }, { y: '-100%', ease: Linear.easeNone })// From right
 
@@ -92,37 +93,31 @@ function initPlayer(id) {
 function scrollScene() {
   const progress = mainScene.progress()
 
-  if (progress < (1/18) && progress < (2/18)) {
+  if (progress < (1/24) && progress < (3/24)) {
     startVideo('intro')
   } else {
     stopVideo('intro')
   }
 
-  if (progress > (2/18) && progress < (4/18)) {
-    startVideo('chapitre-2')
-  } else {
-    stopVideo('chapitre-2')
-  }
-
-  if (progress > (4.5/18) && progress < (8.5/18)) {
+  if (progress > (5/24) && progress < (8/24)) {
     startVideo('chapitre-2c')
   } else {
     stopVideo('chapitre-2c')
   }
 
-  /* if (progress > (9.5/18) && progress < (10.5/18)) {
-    startVideo('chapitre-3')
+  if (progress > (10/24) && progress < (13/24)) {
+    startVideo('chapitre-21')
   } else {
-    stopVideo('chapitre-3')
-  } */
-
-  if (progress > (10.5/18) && progress < (14/18)) {
-    startVideo('chapitre-5')
-  } else {
-    stopVideo('chapitre-5')
+    stopVideo('chapitre-21')
   }
 
-  if (progress > (15/18) && progress < (18.5/18)) {
+  if (progress > (18/24) && progress < (20/24)) {
+    startVideo('chapitre-story')
+  } else {
+    stopVideo('chapitre-story')
+  }
+
+  if (progress > (21/24) && progress < (23/24)) {
     startVideo('chapitre-barode')
   } else {
     stopVideo('chapitre-barode')

@@ -45,6 +45,7 @@ h2 {
   font-stretch: expanded;
   font-size: 5vh;
   text-align: center;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 /*PB : comment faire la marge plus petite sur mobile que sur desktop + sans couper le texte;*/
