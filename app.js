@@ -42,7 +42,6 @@ function onYouTubeIframeAPIReady() {
     .setPin('#container')
     .setTween(wipeAnimation)
     .on("update", scrollScene)
-    .addIndicators()
     .addTo(controller); 
 }
 
