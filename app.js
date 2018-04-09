@@ -7,37 +7,37 @@ function onYouTubeIframeAPIReady() {
   var controller = new ScrollMagic.Controller();
 
   var wipeAnimation = new TimelineMax()
-    .fromTo('section#chapitre-1a', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From bottom
-    .fromTo('section#chapitre-1b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From bottom
-    .fromTo('section#chapitre-2', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2a', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2b', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2bb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2c', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2dd', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-21', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-2aa', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn }) // From right
-    .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-3bis', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-5b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-max', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-maxb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-story', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-storyb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-barodeb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-credit', 1, { y: '100%' }, { y: '0%', ease: Power4.easeIn })// From right
-    .fromTo('section#chapitre-creditb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeIn })// From right
+    .fromTo('section#chapitre-1a', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From bottom
+    .fromTo('section#chapitre-1b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From bottom
+    .fromTo('section#chapitre-2', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2a', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2b', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2bb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2c', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2dd', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-21', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-2aa', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut }) // From right
+    .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-3bis', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-5b', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-max', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-maxb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-story', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-storyb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-barodeb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-credit', 1, { y: '100%' }, { y: '0%', ease: Power4.easeInOut })// From right
+    .fromTo('section#chapitre-creditb', 1, { y: '100%' }, { y: '-100%', ease: Power4.easeInOut })// From right
 
   // create a scene
   mainScene = new ScrollMagic.Scene({
       triggerElement: '#container',
       triggerHook: 'onLeave',
-      duration: ($('section').length - 1) * 300 + '%'  // = nombre de slides * 100 (pour un scroll naturel)
+      duration: ($('section').length - 1) * 450 + '%'  // = nombre de slides * 100 (pour un scroll naturel)
     })
     .setPin('#container')
     .setTween(wipeAnimation)
