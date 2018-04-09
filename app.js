@@ -8,30 +8,31 @@ function onYouTubeIframeAPIReady() {
 
   var wipeAnimation = new TimelineMax()
     .fromTo('section#chapitre-1a', 1, { y: '100%' }, { y: '0%'}) // From bottom
-    .fromTo('section#chapitre-1b', 1, { y: '100%' }, { y: '-100%'}) // From bottom
+    .fromTo('section#chapitre-1b', 10, { y: '100%' }, { y: '-100%'}) // From bottom
     .fromTo('section#chapitre-2', 1, { y: '100%' }, { y: '0%'}) // From right
-    .fromTo('section#chapitre-2a', 1, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2a', 10, { y: '100%' }, { y: '-100%'}) // From right
     .fromTo('section#chapitre-2b', 1, { y: '100%' }, { y: '0%'}) // From right
-    .fromTo('section#chapitre-2bb', 1, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2bb', 10, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2bbis', 10, { y: '100%' }, { y: '-100%'}) // From right
     .fromTo('section#chapitre-2c', 1, { y: '100%' }, { y: '0%'}) // From right
-    .fromTo('section#chapitre-2cc', 1, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2cc', 10, { y: '100%' }, { y: '-100%'}) // From right
     .fromTo('section#chapitre-2d', 1, { y: '100%' }, { y: '0%'}) // From right
-    .fromTo('section#chapitre-2dd', 1, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2dd', 10, { y: '100%' }, { y: '-100%'}) // From right
     .fromTo('section#chapitre-21', 1, { y: '100%' }, { y: '0%'}) // From right
-    .fromTo('section#chapitre-2aa', 1, { y: '100%' }, { y: '-100%'}) // From right
+    .fromTo('section#chapitre-2aa', 10, { y: '100%' }, { y: '-100%'}) // From right
     .fromTo('section#chapitre-3', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-3b', 1, { y: '100%' }, { y: '-100%'})// From right
-    .fromTo('section#chapitre-3bis', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-3b', 10, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-3bis', 10, { y: '100%' }, { y: '-100%'})// From right
     .fromTo('section#chapitre-5', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-5b', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-5b', 10, { y: '100%' }, { y: '-100%'})// From right
     .fromTo('section#chapitre-max', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-maxb', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-maxb', 10, { y: '100%' }, { y: '-100%'})// From right
     .fromTo('section#chapitre-story', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-storyb', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-storyb', 10, { y: '100%' }, { y: '-100%'})// From right
     .fromTo('section#chapitre-barode', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-barodeb', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-barodeb', 10, { y: '100%' }, { y: '-100%'})// From right
     .fromTo('section#chapitre-credit', 1, { y: '100%' }, { y: '0%'})// From right
-    .fromTo('section#chapitre-creditb', 1, { y: '100%' }, { y: '-100%'})// From right
+    .fromTo('section#chapitre-creditb', 10, { y: '100%' }, { y: '0%'})// From right
 
   // create a scene
   mainScene = new ScrollMagic.Scene({
@@ -92,31 +93,31 @@ function initPlayer(id) {
 function scrollScene() {
   const progress = mainScene.progress()
 
-  if (progress < (1/24) && progress < (3/24)) {
+  if (progress < (1/25) && progress < (3/25)) {
     startVideo('intro')
   } else {
     stopVideo('intro')
   }
 
-  if (progress > (5/24) && progress < (8/24)) {
+  if (progress > (5/25) && progress < (8/25)) {
     startVideo('chapitre-2c')
   } else {
     stopVideo('chapitre-2c')
   }
 
-  if (progress > (10/24) && progress < (13/24)) {
+  if (progress > (10/25) && progress < (13/25)) {
     startVideo('chapitre-21')
   } else {
     stopVideo('chapitre-21')
   }
 
-  if (progress > (18/24) && progress < (20/24)) {
+  if (progress > (18/25) && progress < (20/25)) {
     startVideo('chapitre-story')
   } else {
     stopVideo('chapitre-story')
   }
 
-  if (progress > (21/24) && progress < (23/24)) {
+  if (progress > (21/25) && progress < (23/25)) {
     startVideo('chapitre-barode')
   } else {
     stopVideo('chapitre-barode')
@@ -146,21 +147,3 @@ function isMobile()  {
   var ua = navigator.userAgent;
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)
 }
-
-
-$(window).scroll(function() {
-  var bottom_of_window =
-  $(window).scrollTop() + $(window).height();
-  //fade-in
-  $('.fade-ani').each (function(){
-      var bottom_of_object = $(this).position().top + $(this).outerHeight();
-       if( bottom_of_window > bottom_of_object ){
-        $(this).addClass('showing');
-      }
-      else{
-        $(this).removeClass('showing');
-      }
-    });
-
-  });
-
