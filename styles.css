@@ -61,6 +61,13 @@ main article p span.format-quote {
   color: white;
 }
 
+.panel-credits{
+  margin-top: 15%;
+  margin-bottom: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
 iframe {
   pointer-events: none;
 }
