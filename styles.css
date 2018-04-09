@@ -13,12 +13,6 @@
   src: url('MyriadPro-Bold.otf');
 }
 
-@font-face {
-  font-family: "MyriadPro";
-  src: url('MyriadPro-Regular.otf');
-}
-
-
 html, body {
   height: 100%;
   width: 100%;
@@ -32,23 +26,19 @@ html, body {
 h1 {
   font-style: normal;
   font-weight: 600;
-  font-stretch: ultra-expanded;
   font-size: 8vh;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
 h2 {
-  font-style: normal;
   font-weight: normal;
-  font-stretch: expanded;
   font-size: 5vh;
   text-align: center;
   text-shadow: 2px 2px 2px #000000;
 }
 
 /*PB : comment faire la marge plus petite sur mobile que sur desktop + sans couper le texte;*/
+
 p {
   font-size: 3vh;
   padding: 0 5vw;
@@ -58,85 +48,51 @@ main article p span.format-quote {
   font-style: italic;
 }
 
-.panel {
-  background-color: rgba(5, 5, 5, 0.5) !important;
+article.panel {
+  background-color: rgba(5, 5, 5, 0.5);
+  color: white;
 }
 
 .panel-body {
   max-width: 600px;
   margin: auto;
   padding: 45px;
-  opacity: 1;
 }
 
 iframe {
   pointer-events: none;
-  background:black;
 }
 
 main#container {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 main section {
   position: absolute;
-  left:0;
+  left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 section video.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-section .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
-}
-
-section .content-center {  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-section .content-bottom {  
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
 main section img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 section#intro .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
   color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,63 +100,4 @@ section#intro .content {
 
 .content {
   position: relative;
-  padding-bottom: 0;
-  width: 100%;
-  height: 300%;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-span {
-  height:300px;
-  margin-bottom:100px;
-  transition:all ease-out 3s 2s;
-}
-    .fade-ani{
-  opacity:0;
-  position:relative;}
-
-    .fade-down{top:300px;}
-
-    .fade-ani.showing{}
-    .fade-in.showing{opacity:0;}
-    .fade-up.showing{bottom:0px;opacity:1;}
-    .fade-down.showing{top:-0px;opacity:1;}
-
-
-
-/*
-blockquote.fade-up {
-  height:100vh;
-  margin-bottom:-500px;
-  margin-top: 200px;
-  transition:all ease-out 2s 0s;  
-    }
-
-
-.fade-ani {
-  opacity:0;
-  position:relative
-}
-.fade-up {
-  bottom:-300px;
-}
-
-
-.fade-down {
-  top:50px;
-}
-
-
-.fade-ani.showing{}
-    .fade-in.showing{opacity:1;}
-    .fade-up.showing{bottom:0px;opacity:1;}
-    .fade-down.hiding{top:-0px;opacity:1;} 
-
-*/
-
