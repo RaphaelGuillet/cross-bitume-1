@@ -2,7 +2,7 @@ var players = {};
 var mainScene;
 
 function onYouTubeIframeAPIReady() {
-  // $('#container').css('height', window.innerHeight)
+  $('#container').css('height', window.innerHeight)
   // init controller
   var controller = new ScrollMagic.Controller();
 
@@ -44,7 +44,7 @@ function startVideo(chapitre) {
   var id = $(document.getElementById(chapitre)).find('[data-video-id]').attr('id')
   if (players[chapitre] && players[chapitre].playVideo) {
     players[chapitre].playVideo()
-  } else if (!players[chapitre]) {
+  } else {
     players[chapitre] = initPlayer(id)
   }
 }
@@ -75,8 +75,8 @@ function initPlayer(id) {
           event.target.mute()
         }
         event.target.playVideo();
-        // scrollScene()
-        // resizeVideo(id)
+        scrollScene()
+        resizeVideo(id)
       }
     }
   });
@@ -84,13 +84,12 @@ function initPlayer(id) {
 
 function scrollScene() {
   const progress = mainScene.progress()
-  if (progress < (1 / 24)) {
+  if (progress < (1 / 24) && progress < (3 / 24)) {
     startVideo('intro')
   } else {
     stopVideo('intro')
   }
-
-  if (progress > (6 / 24) && progress < (9 / 24)) {
+  if (progress > (5 / 24) && progress < (8 / 24)) {
     startVideo('chapitre-2c')
   } else {
     stopVideo('chapitre-2c')
@@ -112,24 +111,36 @@ function scrollScene() {
   }
 }
 
-// function resizeVideo(id) {
-//   var video = $('#' + id);
-//   if (window.innerWidth > window.innerHeight) {
-//     var newWidth = video.outerHeight() * (16 / 9);
-//     var scale = window.innerWidth / newWidth
-//     video.css('width', newWidth + "px")
-//     video.css('transform-origin', 'left center')
-//   } else {
-//     var newHeight = video.outerWidth() * (9 / 16);
-//     var scale = window.innerHeight / newHeight
-//     video.css('height', newHeight + "px")
-//     video.css('transform-origin', 'center top')
-//   }
-//   //Define the new width and centrally align the iframe
-//   video.css("transform", "scale(" + scale + ")");
-// }
+function resizeVideo(id) {
+  var video = $('#' + id);
+  if (window.innerWidth > window.innerHeight) {
+    var newWidth = video.outerHeight() * (16 / 9);
+    var scale = window.innerWidth / newWidth
+    video.css('width', newWidth + "px")
+    video.css('transform-origin', 'left center')
+  } else {
+    var newHeight = video.outerWidth() * (9 / 16);
+    var scale = window.innerHeight / newHeight
+    video.css('height', newHeight + "px")
+    video.css('transform-origin', 'center top')
+  }
+  //Define the new width and centrally align the iframe
+  video.css("transform", "scale(" + scale + ")");
+}
 
 function isMobile() {
   var ua = navigator.userAgent;
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua)
 }
+$(window).scroll(function() {
+  var bottom_of_window = $(window).scrollTop() + $(window).height();
+  //fade-in
+  $('.fade-ani').each(function() {
+    var bottom_of_object = $(this).position().top + $(this).outerHeight();
+    if (bottom_of_window > bottom_of_object) {
+      $(this).addClass('showing');
+    } else {
+      $(this).removeClass('showing');
+    }
+  });
+});
