@@ -1,0 +1,117 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url('assets/fonts/MyriadPro-Regular.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-weight: bold;
+  src: url('assets/fonts/MyriadPro-Bold.otf');
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+  font-family: "MyriadPro";
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+
+  figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    img, video, #youtube-player {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    iframe {
+      height: 56.25vw;
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      top: 50%;
+      width: 177.77777778vh;
+    }
+
+    figcaption {
+      z-index: 2;
+      color: white;
+
+      h1 {
+        font-style: normal;
+        font-weight: 600;
+        font-stretch: ultra-expanded;
+        font-size: 13vw;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 4vh;
+        text-shadow: 2px 2px 2px #000000;
+      }
+
+      h2 {
+        font-style: normal;
+        font-weight: normal;
+        font-stretch: expanded;
+        font-size: 5vw;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000000;
+      }
+    }
+  }
+
+  &.fixed {
+    figure {
+      position: fixed;
+    }
+  }
+
+  &#intro {
+    article {
+      padding-bottom: 0;
+    }
+  }
+
+  article {
+    position: relative;
+    padding-top: 100vh;
+    padding-bottom: 100vh;
+
+    p {
+      max-width: 600px;
+      margin: auto;
+      padding: 4vw;
+      background-color: rgba(5, 5, 5, 0.5);
+      color: white;
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+  }
+}

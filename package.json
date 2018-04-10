@@ -1,0 +1,25 @@
+{
+  "name": "cross-bitume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "watch": "parcel watch index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.8.3",
+    "parcel-bundler": "^1.7.0",
+    "postcss-modules": "^1.1.0",
+    "mobile-detect": "^1.4.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
